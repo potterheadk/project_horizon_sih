@@ -1,0 +1,5 @@
+Flask==2.2.3
+opencv-python-headless==4.7.0.72
+onnxruntime==1.15.0
+numpy==1.24.3
+torch==2.1.0
