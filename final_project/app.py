@@ -12,7 +12,7 @@ import torch
 app = Flask(__name__)
 
 # Load MobileNetV2-SSD model (pre-trained) using OpenCV's DNN module
-net = cv2.dnn.readNetFromCaffe("mobilenet_ssd.prototxt", "mobilenet_iter_73000.caffemodel")
+net = cv2.dnn.readNetFromCaffe("coustom_models/mobilenet_ssd.prototxt", "coustom_models/mobilenet_iter_73000.caffemodel")
 
 # confidence threshold
 GENDER_CONFIDENCE_THRESHOLD = 0.9
@@ -23,8 +23,8 @@ session_options.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE
 
 # Load the UltraFace, Gender, and Age models with session options
 face_detector = ort.InferenceSession("ultraface/models/version-RFB-640.onnx", sess_options=session_options)
-gender_classifier = ort.InferenceSession("gender_googlenet.onnx", sess_options=session_options)
-age_classifier = ort.InferenceSession("age_googlenet.onnx", sess_options=session_options)
+gender_classifier = ort.InferenceSession("coustom_models/gender_googlenet.onnx", sess_options=session_options)
+age_classifier = ort.InferenceSession("coustom_models/age_googlenet.onnx", sess_options=session_options)
 
 genderList = ['Male', 'Female']
 ageList = ['(0-2)', '(4-6)', '(8-12)', '(15-20)', '(25-32)', '(38-43)', '(48-53)', '(60-100)']
