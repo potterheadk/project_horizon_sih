@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surveillance System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Surveillance System</h1>
+        <button id="startButton">Start Surveillance</button>
+        <div class="content">
+            <div class="video-feed">
+                <img id="videoFeed" src="" alt="Video Feed" style="display: none;">
+            </div>
+            <div class="sidebar">
+                <div class="stats-container">
+                    <div class="count-display">
+                        <div class="count-box">
+                            <div class="count" id="maleCount">0</div>
+                            <div class="label">Males</div>
+                        </div>
+                        <div class="count-box">
+                            <div class="count" id="femaleCount">0</div>
+                            <div class="label">Females</div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="genderChart"></canvas>
+                    </div>
+                    <div class="age-groups">
+                        <h3>Age Groups</h3>
+                        <div id="ageGroupsList"></div>
+                    </div>
+                </div>
+                <div class="alerts" id="alertsContainer">
+                    <h2>Alerts</h2>
+                    <div id="alertsList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

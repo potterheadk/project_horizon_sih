@@ -1,0 +1,150 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.video-feed {
+    flex: 2;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.video-feed img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #2a2a2a;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    margin-left: 20px;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.stats-container {
+    flex-shrink: 0;
+    margin-bottom: 20px;
+}
+
+.count-display {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.count-box {
+    text-align: center;
+    background-color: #3a3a3a;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.count {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.label {
+    font-size: 0.9em;
+    color: #b0b0b0;
+}
+
+.chart-container {
+    height: 150px; /* Reduced height */
+    margin-bottom: 20px;
+}
+
+.age-groups {
+    background-color: #3a3a3a;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.age-groups h3 {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+.alerts {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 150px; /* Ensure minimum height for alerts */
+}
+
+.alert {
+    background-color: #4a1010;
+    color: #ff9999;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#startButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#startButton:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: 50%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .video-feed {
+        height: 50%;
+    }
+}
